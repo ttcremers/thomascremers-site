@@ -6,7 +6,7 @@
 
   <title>Thomas Cremers – schrijver van Zemelaar</title>
   <meta name="description" content="Thomas Cremers is schrijver van Zemelaar: Nederlandstalige essays en literaire observaties over tijd, herinnering en het dagelijks leven." />
-  <link rel="canonical" href="https://thomascremers.com/" />
+  <link rel="canonical" href="https://thomascremers.nl/" />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#0E2233" />
 
@@ -15,7 +15,7 @@
   <meta property="og:locale" content="nl_NL" />
   <meta property="og:title" content="Thomas Cremers – schrijver van Zemelaar" />
   <meta property="og:description" content="Nederlandstalige essays en literaire observaties. Lees het werk op zemelaar.blog." />
-  <meta property="og:url" content="https://thomascremers.com/" />
+  <meta property="og:url" content="https://thomascremers.nl/" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary" />
@@ -27,7 +27,7 @@
     "@context":"https://schema.org",
     "@type":"Person",
     "name":"Thomas Cremers",
-    "url":"https://thomascremers.com/",
+    "url":"https://thomascremers.nl/",
     "sameAs":[
       "https://zemelaar.blog/"
     ]
@@ -35,13 +35,13 @@
   </script>
 
   <style>
-    @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Figtree:wght@400;500;600;700&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600;1,700&display=swap");
 
     :root{
       /* 60/30/10 palette */
       --paper:#F5E9D3;   /* 60 */
       --ink:#2F2B27;     /* 30 */
-      --accent:#E76F51;  /* 10 terracotta */
+      --accent:#D13A32;  /* 10 headband red */
       --secondary:#7C9E7C;
       --highlight:#F4A261;
       --muted:#6C5F54;
@@ -56,7 +56,7 @@
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: "Figtree", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family: "Source Serif Pro", serif;
       background: var(--paper);
       background-image:
         linear-gradient(135deg, rgba(244,162,97,.25), rgba(244,162,97,0) 45%),
@@ -123,6 +123,109 @@
     .navlinks a:focus{box-shadow: 0 0 0 4px var(--ring);}
 
     .hero{padding-top: 34px;}
+    .heroCover{
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 28px 26px 24px;
+      text-align: center;
+      background: rgba(255,255,255,.45);
+      border-radius: 24px;
+      border: 2px solid rgba(47,43,39,.25);
+      box-shadow: 0 20px 40px rgba(47,43,39,.18);
+    }
+    .heroTag{
+      margin: 0;
+      font-size: 12px;
+      letter-spacing: .32em;
+      text-transform: uppercase;
+      color: rgba(47,43,39,.8);
+    }
+    .heroTitle{
+      margin: 16px 0 0;
+      letter-spacing: .02em;
+      line-height: 1.05;
+    }
+    .heroTitleTop{
+      display:block;
+      font-size: clamp(22px, 3.2vw, 30px);
+      letter-spacing: .28em;
+      text-transform: uppercase;
+    }
+    .heroTitleMain{
+      display:block;
+      margin-top: 6px;
+      font-size: clamp(44px, 7vw, 64px);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .heroKey{
+      display:flex;
+      justify-content:center;
+      margin: 14px 0 10px;
+    }
+    .heroKey svg{
+      width: 56px;
+      height: 22px;
+      fill: none;
+      stroke: rgba(47,43,39,.85);
+      stroke-width: 2;
+    }
+    .heroSubtitle{
+      margin: 0 auto 18px;
+      max-width: 30ch;
+      font-size: 16px;
+      color: rgba(47,43,39,.88);
+    }
+    .heroImageWrap{
+      position: relative;
+      margin: 0;
+      padding: 12px;
+      border-radius: 18px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.5)),
+        repeating-linear-gradient(0deg, rgba(231,111,81,.1), rgba(231,111,81,.1) 10px, rgba(244,162,97,.08) 10px, rgba(244,162,97,.08) 20px);
+      border: 2px solid rgba(47,43,39,.2);
+    }
+    .heroImageWrap::after{
+      content:"";
+      position:absolute;
+      inset: 8px;
+      border: 1px solid rgba(47,43,39,.2);
+      border-radius: 12px;
+      pointer-events: none;
+    }
+    .heroImage{
+      display:block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 12px;
+      border: 2px solid rgba(47,43,39,.18);
+    }
+    .heroSticker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 14px 20px;
+      min-height: 48px;
+      line-height: 1;
+      border: 2px solid rgba(47,43,39,.2);
+      background: var(--accent);
+      color: #fff7ef;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: .01em;
+      border-radius: 14px;
+    }
+    .heroSticker:hover{filter:saturate(1.05) brightness(1.02)}
+    .heroSticker:focus{box-shadow: 0 0 0 4px var(--ring), 0 16px 26px rgba(47,43,39,.25);}
+    .heroCta{
+      display:flex;
+      justify-content:flex-end;
+      margin-top: 10px;
+      width: 100%;
+    }
     .kicker{
       font-size: 12px;
       letter-spacing: .2em;
@@ -134,20 +237,21 @@
       font-size: clamp(34px, 4.6vw, 52px);
       line-height: 1.1;
       letter-spacing: -0.02em;
-      font-family: "DM Serif Display", "Times New Roman", serif;
+      font-family: "Source Serif Pro", serif;
       font-weight: 400;
     }
     .dot{color: var(--accent)}
     .titleBand{
       background: rgba(255,255,255,.6);
-      padding: 4px 12px;
+      padding: 10px 16px 12px;
       border-radius: 999px;
       border: 1px solid rgba(28,25,22,.2);
       box-shadow: 0 6px 16px rgba(28,25,22,.12);
-      display: inline-flex;
-      gap: 8px;
-      align-items: center;
-      flex-wrap: wrap;
+      display: inline-block;
+    }
+    .titleLine{
+      display:block;
+      line-height: 1.1;
     }
     .lead{
       margin-top: 16px;
@@ -176,9 +280,10 @@
       background: rgba(255,255,255,.55);
     }
     .btnPrimary{
-      background: var(--ink);
-      color: var(--paper);
+      background: var(--accent);
+      color: #fff7ef;
       border-color: transparent;
+      box-shadow: 0 14px 24px rgba(47,43,39,.25);
     }
     .btnPrimary:hover{filter:saturate(1.06) brightness(1.02)}
     .btn:focus{box-shadow: 0 0 0 4px var(--ring);}
@@ -236,6 +341,77 @@
     }
     .chip b{display:block; font-size: 13px;}
     .chip span{display:block; margin-top:6px; font-size: 13px; color: var(--muted);}
+    .quotes{
+      margin-top: 18px;
+      display:grid;
+      gap: 12px;
+    }
+    @media (min-width: 860px){
+      .quotes{grid-template-columns: repeat(3, minmax(0, 1fr));}
+    }
+    .quoteCard{
+      display:block;
+      text-decoration:none;
+      color: inherit;
+      border-radius: 16px;
+      border: 2px dashed rgba(47,43,39,.18);
+      padding: 14px 16px;
+      background: rgba(255,255,255,.65);
+      min-height: 100%;
+      display:flex;
+      flex-direction: column;
+    }
+    .quoteCard:hover{border-color: rgba(47,43,39,.4)}
+    .quoteCard:focus{box-shadow: 0 0 0 4px var(--ring);}
+    .quoteText{
+      margin: 0;
+      font-size: 16px;
+    }
+    .quoteMeta{
+      margin-top: auto;
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--highlight);
+    }
+    .storyQuote{
+      margin: 12px 0 0;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 2px solid rgba(47,43,39,.18);
+      background: rgba(245,233,211,.7);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .storyLink{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-top: 14px;
+      text-decoration: none;
+      font-weight: 700;
+      color: var(--highlight);
+    }
+    .storyLink:focus{box-shadow: 0 0 0 4px var(--ring);}
+    .card h2.storyTitle{
+      font-size: clamp(22px, 3.2vw, 30px);
+      font-family: "Source Serif Pro", serif;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+    }
+    .storyTag{
+      margin-top: 6px;
+      font-size: 14px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .sectionPad{
+      padding: 20px;
+    }
+    .sectionGap{
+      margin-top: 18px;
+    }
 
     .links{
       margin-top: 18px;
@@ -280,28 +456,40 @@
   <header>
     <div class="top">
       <nav aria-label="Hoofdnavigatie">
-        <div class="brand">thomascremers.com</div>
+        <div class="brand">thomascremers.nl</div>
         <div class="navlinks">
           <a href="https://zemelaar.blog/" target="_blank" rel="noopener">Zemelaar</a>
-          <a href="#links">Links</a>
+          <a href="#citaten">Citaten</a>
+          <a href="#distels">Distels</a>
         </div>
       </nav>
 
       <div class="hero">
-        <div class="kicker">schrijver</div>
-        <h1>
-          <span class="titleBand">Thomas Cremers <span class="dot">•</span> <span style="opacity:.92">Zemelaar</span></span>
-        </h1>
-        <p class="lead">
-          Ik schrijf Nederlandstalige essays, korte verhalen en observaties.
-          Over tijd, herinnering, vervreemding en de kleine fricties van het dagelijks bestaan.
-        </p>
-
-        <div class="ctaRow">
-          <a class="btn btnPrimary" href="https://zemelaar.blog/" target="_blank" rel="noopener">
-            Lees Zemelaar <span aria-hidden="true">↗</span>
-          </a>
-          <a class="btn" href="#over">Wat je hier vindt</a>
+        <div class="heroCover">
+          <p class="heroTag">Schrijver</p>
+          <h1 class="heroTitle">
+            <span class="heroTitleTop">Thomas Cremers</span>
+            <span class="heroTitleMain">Zemelaar</span>
+          </h1>
+          <div class="heroKey" aria-hidden="true">
+            <svg viewBox="0 0 80 30" role="presentation">
+              <circle cx="18" cy="15" r="8"></circle>
+              <line x1="26" y1="15" x2="76" y2="15"></line>
+              <line x1="60" y1="15" x2="60" y2="24"></line>
+              <line x1="68" y1="15" x2="68" y2="21"></line>
+            </svg>
+          </div>
+          <p class="heroSubtitle">
+            Nederlandstalige essays, korte verhalen en observaties over tijd, herinnering en dagelijks leven.
+          </p>
+          <figure class="heroImageWrap">
+            <img class="heroImage" src="assets/zonephotos-photoart-4.jpg" alt="Portret van Thomas Cremers" loading="lazy" />
+          </figure>
+          <div class="heroCta">
+            <a class="heroSticker" href="https://zemelaar.blog/" target="_blank" rel="noopener">
+              Lees Zemelaar <span aria-hidden="true">↗</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -321,49 +509,41 @@
           <div class="chip" role="listitem"><b>Taal</b><span>Nederlands, helder en literair</span></div>
           <div class="chip" role="listitem"><b>Thema’s</b><span>Tijd, herinnering, dagelijks leven</span></div>
         </div>
+
       </section>
 
-      <section class="grid" aria-label="Aanvullende blokken">
-        <article class="card">
-          <h2>Over mij</h2>
-          <p>
-            Ik werk ook als software engineer, maar deze site is geen portfolio.
-            Dit domein is er om mijn schrijverschap te verankeren en lezers door te sturen naar mijn werk.
-          </p>
-          <p class="muted">
-            Professioneel? LinkedIn staat hieronder, klein maar vindbaar.
-          </p>
-        </article>
-
-        <article class="card">
-          <h2>Vindbaarheid</h2>
-          <p>
-            Deze pagina focust op <strong>Zemelaar</strong> als hoofdbegrip, met duidelijke koppen en linktekst.
-            Licht, snel, zonder dependencies.
-          </p>
-          <p class="muted">
-            Tip: plaats op Zemelaar ook een link terug naar deze auteurspagina (twee richtingen helpt).
-          </p>
-        </article>
+      <section id="citaten" class="card sectionGap" aria-label="Citaten uit Zemelaar">
+        <h2>Citaten</h2>
+        <div class="quotes">
+          <a class="quoteCard" href="https://zemelaarblog.wordpress.com/2025/12/30/oorkerst/" target="_blank" rel="noopener">
+            <p class="quoteText">“Alleen nog een beetje lippenstift, lang haar en ik was mijn eigen EuroBonjovi”</p>
+            <div class="quoteMeta">Lees het stuk <span aria-hidden="true">↗</span></div>
+          </a>
+          <a class="quoteCard" href="https://zemelaarblog.wordpress.com/2025/06/28/zijn-ouwe-zemelaars-eigenwijs/" target="_blank" rel="noopener">
+            <p class="quoteText">“Okay, even over proportionele tijd en de illusie van wijsheid!”</p>
+            <div class="quoteMeta">Lees het stuk <span aria-hidden="true">↗</span></div>
+          </a>
+          <a class="quoteCard" href="https://zemelaarblog.wordpress.com/2023/08/14/pervers-aspirant-wipkonijn/" target="_blank" rel="noopener">
+            <p class="quoteText">“Als je beiden doet, ben je dus een aspirant pervers wipkonijn. Helaas zul je het nooit echt worden, het zit niet in je.”</p>
+            <div class="quoteMeta">Lees het stuk <span aria-hidden="true">↗</span></div>
+          </a>
+        </div>
       </section>
 
-      <section id="links" class="links" aria-label="Links">
-        <a class="linkCard" href="https://zemelaar.blog/" target="_blank" rel="noopener">
-          <div><strong>Zemelaar</strong></div>
-          <small>Mijn blog en hoofdwerk</small>
-          <div class="go">zemelaar.blog ↗</div>
-        </a>
-
-        <a class="linkCard" href="https://www.linkedin.com/in/JE-LINKEDIN-HIER/" target="_blank" rel="noopener">
-          <div><strong>LinkedIn</strong></div>
-          <small>Professioneel profiel</small>
-          <div class="go">linkedin.com ↗</div>
+      <section id="distels" class="card sectionGap" aria-label="De geur van distels">
+        <h2 class="storyTitle">De geur van distels</h2>
+        <p class="storyTag">Een kortverhaal</p>
+        <blockquote class="storyQuote">
+          Soms dacht hij terug aan de dijk van vroeger.<br />
+          Zomers zoemde het er van de insecten. Het gras en onkruid groeiden tot voorbij<br />
+          zijn kruin. Onkruid — een woord dat nu oud voelt. Hij kon zich niet voorstellen<br />
+          dat iets wat leeft, ongewenst kon zijn.
+        </blockquote>
+        <a class="storyLink" href="assets/De-geur-van-distels_Thomas-Cremers.pdf" download>
+          Download de gratis pdf <span aria-hidden="true">↗</span>
         </a>
       </section>
 
-      <footer>
-        © 2026 Thomas Cremers • schrijver van Zemelaar
-      </footer>
     </main>
   </div>
 </body>
