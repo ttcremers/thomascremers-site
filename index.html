@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Thomas Cremers – schrijver van Zemelaar</title>
+  <meta name="description" content="Thomas Cremers is schrijver van Zemelaar: Nederlandstalige essays en literaire observaties over tijd, herinnering en het dagelijks leven." />
+  <link rel="canonical" href="https://thomascremers.com/" />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0E2233" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="nl_NL" />
+  <meta property="og:title" content="Thomas Cremers – schrijver van Zemelaar" />
+  <meta property="og:description" content="Nederlandstalige essays en literaire observaties. Lees het werk op zemelaar.blog." />
+  <meta property="og:url" content="https://thomascremers.com/" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Thomas Cremers – schrijver van Zemelaar" />
+  <meta name="twitter:description" content="Nederlandstalige essays en literaire observaties. Lees het werk op zemelaar.blog." />
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Thomas Cremers",
+    "url":"https://thomascremers.com/",
+    "sameAs":[
+      "https://zemelaar.blog/"
+    ]
+  }
+  </script>
+
+  <style>
+    :root{
+      /* 60/30/10 palette */
+      --paper:#F6F3EE;   /* 60 */
+      --ink:#0E2233;     /* 30 */
+      --accent:#FF4F79;  /* 10 guava-pink */
+      --muted:#5B6B78;
+      --ring: rgba(255,79,121,.35);
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(14,34,51,.12);
+      --line: rgba(14,34,51,.12);
+      --max: 880px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a{color:inherit}
+    a:focus{outline:none}
+    .skip{
+      position:absolute; left:-999px; top:12px;
+      background:#fff; color:var(--ink);
+      padding:10px 14px; border-radius:12px;
+      box-shadow: var(--shadow);
+      border:1px solid var(--line);
+    }
+    .skip:focus{left:12px; box-shadow: 0 0 0 4px var(--ring), var(--shadow);}
+
+    .wrap{max-width:var(--max); margin:0 auto; padding: 28px 18px 70px;}
+
+    header{
+      background: var(--ink);
+      color: var(--paper);
+      border-bottom: 1px solid rgba(246,243,238,.12);
+    }
+    .top{
+      max-width:var(--max);
+      margin:0 auto;
+      padding: 22px 18px 30px;
+    }
+    nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px;
+    }
+    .brand{
+      font-size: 13px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      opacity: .9;
+      white-space: nowrap;
+    }
+    .navlinks{display:flex; gap:10px; flex-wrap:wrap}
+    .navlinks a{
+      font-size:14px;
+      padding: 8px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(246,243,238,.18);
+      text-decoration:none;
+      opacity:.95;
+    }
+    .navlinks a:hover{border-color: rgba(246,243,238,.35)}
+    .navlinks a:focus{box-shadow: 0 0 0 4px var(--ring);}
+
+    .hero{padding-top: 34px;}
+    .kicker{
+      font-size: 12px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      opacity:.85;
+    }
+    h1{
+      margin: 10px 0 0;
+      font-size: clamp(34px, 4.6vw, 52px);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+    .dot{color: var(--accent)}
+    .lead{
+      margin-top: 16px;
+      max-width: 62ch;
+      font-size: 18px;
+      color: rgba(246,243,238,.9);
+    }
+
+    .ctaRow{
+      display:flex;
+      gap:12px;
+      margin-top: 22px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(246,243,238,.20);
+      text-decoration:none;
+      font-weight: 650;
+      letter-spacing: .01em;
+    }
+    .btnPrimary{
+      background: var(--accent);
+      color: var(--ink);
+      border-color: transparent;
+    }
+    .btnPrimary:hover{filter:saturate(1.06) brightness(1.02)}
+    .btn:focus{box-shadow: 0 0 0 4px var(--ring);}
+
+    main{margin-top: 28px;}
+    .card{
+      background: rgba(255,255,255,.62);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px;
+      backdrop-filter: blur(6px);
+    }
+    .card h2{
+      margin:0;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+    .card p{margin: 10px 0 0; color: #1A2D3A;}
+    .muted{color: var(--muted)}
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 14px;
+    }
+    @media (min-width: 860px){
+      .grid{grid-template-columns: 1fr 1fr}
+    }
+
+    .chips{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    @media (min-width: 640px){
+      .chips{grid-template-columns: 1fr 1fr 1fr}
+    }
+    .chip{
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      padding: 12px 12px;
+      background: rgba(246,243,238,.75);
+    }
+    .chip b{display:block; font-size: 13px;}
+    .chip span{display:block; margin-top:6px; font-size: 13px; color: var(--muted);}
+
+    .links{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    @media (min-width: 640px){
+      .links{grid-template-columns: 1fr 1fr}
+    }
+    .linkCard{
+      background: var(--ink);
+      color: var(--paper);
+      border-radius: var(--radius);
+      padding: 16px;
+      border: 1px solid rgba(246,243,238,.12);
+      text-decoration:none;
+    }
+    .linkCard:hover{border-color: rgba(246,243,238,.30)}
+    .linkCard:focus{box-shadow: 0 0 0 4px var(--ring);}
+    .linkCard small{opacity:.85}
+    .linkCard .go{margin-top: 10px; color: var(--accent); font-weight: 700;}
+
+    footer{
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#content">Naar inhoud</a>
+
+  <header>
+    <div class="top">
+      <nav aria-label="Hoofdnavigatie">
+        <div class="brand">thomascremers.com</div>
+        <div class="navlinks">
+          <a href="https://zemelaar.blog/" target="_blank" rel="noopener">Zemelaar</a>
+          <a href="#links">Links</a>
+        </div>
+      </nav>
+
+      <div class="hero">
+        <div class="kicker">schrijver</div>
+        <h1>Thomas Cremers <span class="dot">•</span> <span style="opacity:.92">Zemelaar</span></h1>
+        <p class="lead">
+          Ik schrijf Nederlandstalige essays, korte verhalen en observaties.
+          Over tijd, herinnering, vervreemding en de kleine fricties van het dagelijks bestaan.
+        </p>
+
+        <div class="ctaRow">
+          <a class="btn btnPrimary" href="https://zemelaar.blog/" target="_blank" rel="noopener">
+            Lees Zemelaar <span aria-hidden="true">↗</span>
+          </a>
+          <a class="btn" href="#over">Wat je hier vindt</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <main id="content" aria-label="Inhoud">
+      <section id="over" class="card">
+        <h2>Wat is Zemelaar?</h2>
+        <p>
+          <strong>Zemelaar</strong> is mijn schrijversplek. Geen groot gebaar, geen meningen om het gelijk.
+          Wel taal die wil blijven hangen. Soms melancholisch. Soms scherp. Altijd persoonlijk.
+        </p>
+
+        <div class="chips" role="list" aria-label="Kenmerken">
+          <div class="chip" role="listitem"><b>Vorm</b><span>Essays, korte verhalen, observaties</span></div>
+          <div class="chip" role="listitem"><b>Taal</b><span>Nederlands, helder en literair</span></div>
+          <div class="chip" role="listitem"><b>Thema’s</b><span>Tijd, herinnering, dagelijks leven</span></div>
+        </div>
+      </section>
+
+      <section class="grid" aria-label="Aanvullende blokken">
+        <article class="card">
+          <h2>Over mij</h2>
+          <p>
+            Ik werk ook als software engineer, maar deze site is geen portfolio.
+            Dit domein is er om mijn schrijverschap te verankeren en lezers door te sturen naar mijn werk.
+          </p>
+          <p class="muted">
+            Professioneel? LinkedIn staat hieronder, klein maar vindbaar.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>Vindbaarheid</h2>
+          <p>
+            Deze pagina focust op <strong>Zemelaar</strong> als hoofdbegrip, met duidelijke koppen en linktekst.
+            Licht, snel, zonder dependencies.
+          </p>
+          <p class="muted">
+            Tip: plaats op Zemelaar ook een link terug naar deze auteurspagina (twee richtingen helpt).
+          </p>
+        </article>
+      </section>
+
+      <section id="links" class="links" aria-label="Links">
+        <a class="linkCard" href="https://zemelaar.blog/" target="_blank" rel="noopener">
+          <div><strong>Zemelaar</strong></div>
+          <small>Mijn blog en hoofdwerk</small>
+          <div class="go">zemelaar.blog ↗</div>
+        </a>
+
+        <a class="linkCard" href="https://www.linkedin.com/in/JE-LINKEDIN-HIER/" target="_blank" rel="noopener">
+          <div><strong>LinkedIn</strong></div>
+          <small>Professioneel profiel</small>
+          <div class="go">linkedin.com ↗</div>
+        </a>
+      </section>
+
+      <footer>
+        © 2026 Thomas Cremers • schrijver van Zemelaar
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
+
