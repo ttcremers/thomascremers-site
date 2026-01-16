@@ -35,25 +35,34 @@
   </script>
 
   <style>
+    @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Figtree:wght@400;500;600;700&display=swap");
+
     :root{
       /* 60/30/10 palette */
-      --paper:#F6F3EE;   /* 60 */
-      --ink:#0E2233;     /* 30 */
-      --accent:#FF4F79;  /* 10 guava-pink */
-      --muted:#5B6B78;
-      --ring: rgba(255,79,121,.35);
-      --radius: 18px;
-      --shadow: 0 10px 30px rgba(14,34,51,.12);
-      --line: rgba(14,34,51,.12);
-      --max: 880px;
+      --paper:#F5E9D3;   /* 60 */
+      --ink:#2F2B27;     /* 30 */
+      --accent:#E76F51;  /* 10 terracotta */
+      --secondary:#7C9E7C;
+      --highlight:#F4A261;
+      --muted:#6C5F54;
+      --ring: rgba(231,111,81,.35);
+      --radius: 20px;
+      --shadow: 0 18px 36px rgba(47,43,39,.12);
+      --line: rgba(47,43,39,.18);
+      --max: 900px;
     }
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family: "Figtree", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       background: var(--paper);
+      background-image:
+        linear-gradient(135deg, rgba(244,162,97,.25), rgba(244,162,97,0) 45%),
+        linear-gradient(45deg, rgba(124,158,124,.18), rgba(124,158,124,0) 52%),
+        repeating-linear-gradient(90deg, rgba(47,43,39,.06), rgba(47,43,39,.06) 1px, transparent 1px, transparent 26px);
+      background-attachment: fixed;
       color: var(--ink);
       line-height: 1.55;
       -webkit-font-smoothing: antialiased;
@@ -74,9 +83,11 @@
     .wrap{max-width:var(--max); margin:0 auto; padding: 28px 18px 70px;}
 
     header{
-      background: var(--ink);
-      color: var(--paper);
-      border-bottom: 1px solid rgba(246,243,238,.12);
+      background:
+        linear-gradient(135deg, rgba(231,111,81,.95), rgba(244,162,97,.95) 45%, rgba(124,158,124,.85)),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.18), rgba(255,255,255,.18) 2px, transparent 2px, transparent 22px);
+      color: #1C1916;
+      border-bottom: 3px solid rgba(47,43,39,.2);
     }
     .top{
       max-width:var(--max);
@@ -93,17 +104,22 @@
       text-transform: uppercase;
       opacity: .9;
       white-space: nowrap;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(28,25,22,.2);
+      background: rgba(255,255,255,.5);
     }
     .navlinks{display:flex; gap:10px; flex-wrap:wrap}
     .navlinks a{
       font-size:14px;
       padding: 8px 12px;
       border-radius: 12px;
-      border: 1px solid rgba(246,243,238,.18);
+      border: 1px dashed rgba(28,25,22,.35);
       text-decoration:none;
       opacity:.95;
+      background: rgba(255,255,255,.35);
     }
-    .navlinks a:hover{border-color: rgba(246,243,238,.35)}
+    .navlinks a:hover{border-color: rgba(28,25,22,.55)}
     .navlinks a:focus{box-shadow: 0 0 0 4px var(--ring);}
 
     .hero{padding-top: 34px;}
@@ -118,13 +134,26 @@
       font-size: clamp(34px, 4.6vw, 52px);
       line-height: 1.1;
       letter-spacing: -0.02em;
+      font-family: "DM Serif Display", "Times New Roman", serif;
+      font-weight: 400;
     }
     .dot{color: var(--accent)}
+    .titleBand{
+      background: rgba(255,255,255,.6);
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(28,25,22,.2);
+      box-shadow: 0 6px 16px rgba(28,25,22,.12);
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
     .lead{
       margin-top: 16px;
       max-width: 62ch;
       font-size: 18px;
-      color: rgba(246,243,238,.9);
+      color: rgba(28,25,22,.9);
     }
 
     .ctaRow{
@@ -140,14 +169,15 @@
       gap:10px;
       padding: 12px 16px;
       border-radius: 14px;
-      border: 1px solid rgba(246,243,238,.20);
+      border: 2px solid rgba(28,25,22,.25);
       text-decoration:none;
       font-weight: 650;
       letter-spacing: .01em;
+      background: rgba(255,255,255,.55);
     }
     .btnPrimary{
-      background: var(--accent);
-      color: var(--ink);
+      background: var(--ink);
+      color: var(--paper);
       border-color: transparent;
     }
     .btnPrimary:hover{filter:saturate(1.06) brightness(1.02)}
@@ -155,12 +185,21 @@
 
     main{margin-top: 28px;}
     .card{
-      background: rgba(255,255,255,.62);
-      border: 1px solid var(--line);
+      background: rgba(255,255,255,.7);
+      border: 2px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       padding: 20px;
       backdrop-filter: blur(6px);
+      position: relative;
+    }
+    .card::after{
+      content:"";
+      position:absolute;
+      inset: 6px;
+      border: 1px dashed rgba(47,43,39,.16);
+      border-radius: calc(var(--radius) - 6px);
+      pointer-events:none;
     }
     .card h2{
       margin:0;
@@ -191,9 +230,9 @@
     }
     .chip{
       border-radius: 14px;
-      border: 1px solid var(--line);
+      border: 2px solid var(--line);
       padding: 12px 12px;
-      background: rgba(246,243,238,.75);
+      background: rgba(245,233,211,.8);
     }
     .chip b{display:block; font-size: 13px;}
     .chip span{display:block; margin-top:6px; font-size: 13px; color: var(--muted);}
@@ -208,22 +247,23 @@
       .links{grid-template-columns: 1fr 1fr}
     }
     .linkCard{
-      background: var(--ink);
+      background: #1F1A16;
       color: var(--paper);
       border-radius: var(--radius);
       padding: 16px;
-      border: 1px solid rgba(246,243,238,.12);
+      border: 2px solid rgba(245,233,211,.3);
       text-decoration:none;
+      box-shadow: 0 12px 24px rgba(31,26,22,.18);
     }
-    .linkCard:hover{border-color: rgba(246,243,238,.30)}
+    .linkCard:hover{border-color: rgba(245,233,211,.5)}
     .linkCard:focus{box-shadow: 0 0 0 4px var(--ring);}
     .linkCard small{opacity:.85}
-    .linkCard .go{margin-top: 10px; color: var(--accent); font-weight: 700;}
+    .linkCard .go{margin-top: 10px; color: var(--highlight); font-weight: 700;}
 
     footer{
       margin-top: 18px;
       padding-top: 18px;
-      border-top: 1px solid var(--line);
+      border-top: 2px dashed var(--line);
       font-size: 13px;
       color: var(--muted);
     }
@@ -249,7 +289,9 @@
 
       <div class="hero">
         <div class="kicker">schrijver</div>
-        <h1>Thomas Cremers <span class="dot">•</span> <span style="opacity:.92">Zemelaar</span></h1>
+        <h1>
+          <span class="titleBand">Thomas Cremers <span class="dot">•</span> <span style="opacity:.92">Zemelaar</span></span>
+        </h1>
         <p class="lead">
           Ik schrijf Nederlandstalige essays, korte verhalen en observaties.
           Over tijd, herinnering, vervreemding en de kleine fricties van het dagelijks bestaan.
@@ -326,4 +368,3 @@
   </div>
 </body>
 </html>
-
