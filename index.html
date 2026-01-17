@@ -50,6 +50,7 @@
       --shadow: 0 18px 36px rgba(47,43,39,.12);
       --line: rgba(47,43,39,.18);
       --max: 900px;
+      --hero-figure-max: 420px;
     }
 
     *{box-sizing:border-box}
@@ -180,6 +181,8 @@
       position: relative;
       margin: 0;
       padding: 12px;
+      display: inline-block;
+      width: min(100%, var(--hero-figure-max));
       border-radius: 18px;
       background:
         linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.5)),
@@ -197,11 +200,10 @@
     .heroImage{
       display:block;
       width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      object-position: top;
+      height: auto;
       border-radius: 12px;
       border: 2px solid rgba(47,43,39,.18);
+      background: #f2e6d2;
     }
     .heroSticker{
       display:inline-flex;
@@ -218,13 +220,22 @@
       letter-spacing: .01em;
       border-radius: 14px;
     }
+    .heroStickerInvert{
+      background: rgba(255,255,255,.65);
+      color: var(--accent);
+      border-color: var(--accent);
+    }
     .heroSticker:hover{filter:saturate(1.05) brightness(1.02)}
+    .heroStickerInvert:hover{filter:saturate(1.08) brightness(1.02)}
     .heroSticker:focus{box-shadow: 0 0 0 4px var(--ring), 0 16px 26px rgba(47,43,39,.25);}
     .heroCta{
       display:flex;
-      justify-content:flex-end;
+      justify-content:space-between;
       margin-top: 10px;
-      width: 100%;
+      gap: 12px;
+      width: min(100%, var(--hero-figure-max));
+      margin-left: auto;
+      margin-right: auto;
     }
     .kicker{
       font-size: 12px;
@@ -459,14 +470,12 @@
         <div class="brand">thomascremers.nl</div>
         <div class="navlinks">
           <a href="https://zemelaar.blog/" target="_blank" rel="noopener">Zemelaar</a>
-          <a href="#citaten">Citaten</a>
-          <a href="#distels">Distels</a>
         </div>
       </nav>
 
       <div class="hero">
         <div class="heroCover">
-          <p class="heroTag">Schrijver</p>
+          <p class="heroTag"></p>
           <h1 class="heroTitle">
             <span class="heroTitleTop">Thomas Cremers</span>
             <span class="heroTitleMain">Zemelaar</span>
@@ -483,7 +492,7 @@
             Nederlandstalige essays, korte verhalen en observaties over tijd, herinnering en dagelijks leven.
           </p>
           <figure class="heroImageWrap">
-            <img class="heroImage" src="assets/zonephotos-photoart-4.jpg" alt="Portret van Thomas Cremers" loading="lazy" />
+            <img class="heroImage" src="assets/zonephotos-photoart-1.jpg" alt="Portret van Thomas Cremers" loading="lazy" width="1667" height="1334" />
           </figure>
           <div class="heroCta">
             <a class="heroSticker" href="https://zemelaar.blog/" target="_blank" rel="noopener">
@@ -501,7 +510,7 @@
         <h2>Wat is Zemelaar?</h2>
         <p>
           <strong>Zemelaar</strong> is mijn schrijversplek. Geen groot gebaar, geen meningen om het gelijk.
-          Wel taal die wil blijven hangen. Soms melancholisch. Soms scherp. Altijd persoonlijk.
+          Wel taal die wil blijven hangen. Soms melancholisch. Soms scherp. <a href="https://zemelaarblog.wordpress.com/2025/11/28/klets-kronieken/">Altijd persoonlijk</a>.
         </p>
 
         <div class="chips" role="list" aria-label="Kenmerken">
