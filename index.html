@@ -50,6 +50,7 @@
       --shadow: 0 18px 36px rgba(47,43,39,.12);
       --line: rgba(47,43,39,.18);
       --max: 900px;
+      --hero-max: 980px;
       --hero-figure-max: 420px;
     }
 
@@ -93,47 +94,31 @@
     .top{
       max-width:var(--max);
       margin:0 auto;
-      padding: 22px 18px 30px;
+      padding: 30px 18px;
     }
-    nav{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:16px;
-    }
-    .brand{
-      font-size: 13px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      opacity: .9;
-      white-space: nowrap;
-      padding: 6px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(28,25,22,.2);
-      background: rgba(255,255,255,.5);
-    }
-    .navlinks{display:flex; gap:10px; flex-wrap:wrap}
-    .navlinks a{
-      font-size:14px;
-      padding: 8px 12px;
-      border-radius: 12px;
-      border: 1px dashed rgba(28,25,22,.35);
-      text-decoration:none;
-      opacity:.95;
-      background: rgba(255,255,255,.35);
-    }
-    .navlinks a:hover{border-color: rgba(28,25,22,.55)}
-    .navlinks a:focus{box-shadow: 0 0 0 4px var(--ring);}
-
-    .hero{padding-top: 34px;}
+    .hero{padding-top: 10px;}
     .heroCover{
-      max-width: 520px;
+      max-width: var(--hero-max);
       margin: 0 auto;
-      padding: 28px 26px 24px;
+      padding: 30px 30px 28px;
       text-align: center;
       background: rgba(255,255,255,.45);
       border-radius: 24px;
       border: 2px solid rgba(47,43,39,.25);
       box-shadow: 0 20px 40px rgba(47,43,39,.18);
     }
+    .heroGrid{
+      display: grid;
+      gap: 2.5em;
+      align-items: start;
+    }
+    .heroIntro{
+      text-align: center;
+      display:flex;
+      flex-direction: column;
+      gap: 1.2em;
+    }
+    .heroIntro > *{margin: 0;}
     .heroTag{
       margin: 0;
       font-size: 12px;
@@ -142,7 +127,7 @@
       color: rgba(47,43,39,.8);
     }
     .heroTitle{
-      margin: 16px 0 0;
+      margin: 0;
       letter-spacing: .02em;
       line-height: 1.05;
     }
@@ -162,7 +147,7 @@
     .heroKey{
       display:flex;
       justify-content:center;
-      margin: 14px 0 10px;
+      margin: 0;
     }
     .heroKey svg{
       width: 56px;
@@ -172,17 +157,18 @@
       stroke-width: 2;
     }
     .heroSubtitle{
-      margin: 0 auto 18px;
-      max-width: 30ch;
+      margin: 0 auto;
+      max-width: 34ch;
       font-size: 16px;
       color: rgba(47,43,39,.88);
     }
     .heroImageWrap{
       position: relative;
-      margin: 0;
-      padding: 12px;
-      display: inline-block;
-      width: min(100%, var(--hero-figure-max));
+      margin: 0 auto;
+      padding: 10px;
+      display: block;
+      width: 100%;
+      max-width: var(--hero-figure-max);
       border-radius: 18px;
       background:
         linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.5)),
@@ -212,7 +198,7 @@
       padding: 14px 20px;
       min-height: 48px;
       line-height: 1;
-      border: 2px solid rgba(47,43,39,.2);
+      border: 2px solid var(--accent);
       background: var(--accent);
       color: #fff7ef;
       text-decoration: none;
@@ -230,12 +216,61 @@
     .heroSticker:focus{box-shadow: 0 0 0 4px var(--ring), 0 16px 26px rgba(47,43,39,.25);}
     .heroCta{
       display:flex;
-      justify-content:space-between;
-      margin-top: 10px;
+      justify-content:center;
+      margin-top: 4px;
       gap: 12px;
-      width: min(100%, var(--hero-figure-max));
-      margin-left: auto;
-      margin-right: auto;
+      width: 100%;
+    }
+    .heroAbout{
+      margin: 0;
+      text-align: left;
+      position: relative;
+    }
+    .heroQuotes{text-align: left;}
+    .heroQuotesTitle{
+      margin: 0 0 8px;
+      display: block;
+    }
+    .heroAboutTitle{
+      margin: 0 0 8px;
+      display: block;
+    }
+    .heroAboutBody{
+      margin-top: 0;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 2px dashed rgba(47,43,39,.18);
+      background: rgba(255,255,255,.65);
+    }
+    .heroAboutBody .chips{margin-top: 10px;}
+    .heroQuotes .quotes{
+      margin-top: 0;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    .heroQuotes .quoteCard{
+      padding: 12px 14px;
+    }
+    .heroQuotes .quoteText{
+      font-size: 15px;
+    }
+    .heroQuotes .quoteMeta{
+      font-size: 11px;
+    }
+    @media (min-width: 860px){
+      .heroGrid{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+          "intro image"
+          "about quotes";
+      }
+      .heroIntro{grid-area: intro; text-align: left;}
+      .heroImageWrap{grid-area: image; max-width: none;}
+      .heroAbout{grid-area: about;}
+      .heroQuotes{grid-area: quotes;}
+      .heroKey{justify-content: flex-start;}
+      .heroSubtitle{margin-left: 0;}
+      .heroCta{justify-content: flex-start;}
     }
     .kicker{
       font-size: 12px;
@@ -466,38 +501,66 @@
 
   <header>
     <div class="top">
-      <nav aria-label="Hoofdnavigatie">
-        <div class="brand">thomascremers.nl</div>
-        <div class="navlinks">
-          <a href="https://zemelaar.blog/" target="_blank" rel="noopener">Zemelaar</a>
-        </div>
-      </nav>
-
       <div class="hero">
         <div class="heroCover">
-          <p class="heroTag"></p>
-          <h1 class="heroTitle">
-            <span class="heroTitleTop">Thomas Cremers</span>
-            <span class="heroTitleMain">Zemelaar</span>
-          </h1>
-          <div class="heroKey" aria-hidden="true">
-            <svg viewBox="0 0 80 30" role="presentation">
-              <circle cx="18" cy="15" r="8"></circle>
-              <line x1="26" y1="15" x2="76" y2="15"></line>
-              <line x1="60" y1="15" x2="60" y2="24"></line>
-              <line x1="68" y1="15" x2="68" y2="21"></line>
-            </svg>
-          </div>
-          <p class="heroSubtitle">
-            Nederlandstalige essays, korte verhalen en observaties over tijd, herinnering en dagelijks leven.
-          </p>
-          <figure class="heroImageWrap">
-            <img class="heroImage" src="assets/zonephotos-photoart-1.jpg" alt="Portret van Thomas Cremers" loading="lazy" width="1667" height="1334" />
-          </figure>
-          <div class="heroCta">
-            <a class="heroSticker" href="https://zemelaar.blog/" target="_blank" rel="noopener">
-              Lees Zemelaar <span aria-hidden="true">↗</span>
-            </a>
+          <div class="heroGrid">
+            <div class="heroIntro">
+              <p class="heroTag">Essays &amp; korte verhalen</p>
+              <h1 class="heroTitle">
+                <span class="heroTitleTop">Thomas Cremers</span>
+                <span class="heroTitleMain">Zemelaar</span>
+              </h1>
+              <div class="heroKey" aria-hidden="true">
+                <svg viewBox="0 0 80 30" role="presentation">
+                  <circle cx="18" cy="15" r="8"></circle>
+                  <line x1="26" y1="15" x2="76" y2="15"></line>
+                  <line x1="60" y1="15" x2="60" y2="24"></line>
+                  <line x1="68" y1="15" x2="68" y2="21"></line>
+                </svg>
+              </div>
+              <p class="heroSubtitle">
+                Nederlandstalige essays, korte verhalen en observaties over tijd, herinnering en dagelijks leven.
+              </p>
+              <div class="heroCta">
+                <a class="heroSticker" href="https://zemelaar.blog/" target="_blank" rel="noopener">
+                  Lees Zemelaar <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+            <figure class="heroImageWrap">
+              <img class="heroImage" src="assets/zonephotos-photoart-1.jpg" alt="Portret van Thomas Cremers" loading="lazy" width="1667" height="1334" />
+            </figure>
+            <section class="heroAbout" aria-label="Wat is Zemelaar?">
+              <h2 class="kicker heroAboutTitle">Wat is Zemelaar?</h2>
+              <div class="heroAboutBody">
+                <p>
+                  <strong>Zemelaar</strong> is mijn schrijversplek. Geen groot gebaar, geen meningen om het gelijk.
+                  Wel taal die wil blijven hangen. Soms melancholisch. Soms scherp. <a href="https://zemelaarblog.wordpress.com/2025/11/28/klets-kronieken/">Altijd persoonlijk</a>.
+                </p>
+                <div class="chips" role="list" aria-label="Kenmerken">
+                  <div class="chip" role="listitem"><b>Vorm</b><span>Essays, korte verhalen, observaties</span></div>
+                  <div class="chip" role="listitem"><b>Taal</b><span>Nederlands, helder en literair</span></div>
+                  <div class="chip" role="listitem"><b>Thema’s</b><span>Tijd, herinnering, dagelijks leven</span></div>
+                </div>
+              </div>
+            </section>
+            <div class="heroQuotes" aria-label="Citaten uit Zemelaar">
+              <h2 class="kicker heroQuotesTitle">Citaten</h2>
+              <div class="quotes">
+                <a class="quoteCard" href="https://zemelaarblog.wordpress.com/2025/12/30/oorkerst/" target="_blank" rel="noopener">
+                  <p class="quoteText">“Alleen nog een beetje lippenstift, lang haar en ik was mijn eigen EuroBonjovi”</p>
+                  <div class="quoteMeta">Lees het stuk <span aria-hidden="true">↗</span></div>
+                </a>
+                <a class="quoteCard" href="https://zemelaarblog.wordpress.com/2025/06/28/zijn-ouwe-zemelaars-eigenwijs/" target="_blank" rel="noopener">
+                  <p class="quoteText">“Okay, even over proportionele tijd en de illusie van wijsheid!”</p>
+                  <div class="quoteMeta">Lees het stuk <span aria-hidden="true">↗</span></div>
+                </a>
+                <a class="quoteCard" href="https://zemelaarblog.wordpress.com/2023/08/14/pervers-aspirant-wipkonijn/" target="_blank" rel="noopener">
+                  <p class="quoteText">“Als je beiden doet, ben je dus een aspirant pervers wipkonijn. Helaas zul je het nooit echt worden, het zit niet in je.”</p>
+                  <div class="quoteMeta">Lees het stuk <span aria-hidden="true">↗</span></div>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -506,39 +569,6 @@
 
   <div class="wrap">
     <main id="content" aria-label="Inhoud">
-      <section id="over" class="card">
-        <h2>Wat is Zemelaar?</h2>
-        <p>
-          <strong>Zemelaar</strong> is mijn schrijversplek. Geen groot gebaar, geen meningen om het gelijk.
-          Wel taal die wil blijven hangen. Soms melancholisch. Soms scherp. <a href="https://zemelaarblog.wordpress.com/2025/11/28/klets-kronieken/">Altijd persoonlijk</a>.
-        </p>
-
-        <div class="chips" role="list" aria-label="Kenmerken">
-          <div class="chip" role="listitem"><b>Vorm</b><span>Essays, korte verhalen, observaties</span></div>
-          <div class="chip" role="listitem"><b>Taal</b><span>Nederlands, helder en literair</span></div>
-          <div class="chip" role="listitem"><b>Thema’s</b><span>Tijd, herinnering, dagelijks leven</span></div>
-        </div>
-
-      </section>
-
-      <section id="citaten" class="card sectionGap" aria-label="Citaten uit Zemelaar">
-        <h2>Citaten</h2>
-        <div class="quotes">
-          <a class="quoteCard" href="https://zemelaarblog.wordpress.com/2025/12/30/oorkerst/" target="_blank" rel="noopener">
-            <p class="quoteText">“Alleen nog een beetje lippenstift, lang haar en ik was mijn eigen EuroBonjovi”</p>
-            <div class="quoteMeta">Lees het stuk <span aria-hidden="true">↗</span></div>
-          </a>
-          <a class="quoteCard" href="https://zemelaarblog.wordpress.com/2025/06/28/zijn-ouwe-zemelaars-eigenwijs/" target="_blank" rel="noopener">
-            <p class="quoteText">“Okay, even over proportionele tijd en de illusie van wijsheid!”</p>
-            <div class="quoteMeta">Lees het stuk <span aria-hidden="true">↗</span></div>
-          </a>
-          <a class="quoteCard" href="https://zemelaarblog.wordpress.com/2023/08/14/pervers-aspirant-wipkonijn/" target="_blank" rel="noopener">
-            <p class="quoteText">“Als je beiden doet, ben je dus een aspirant pervers wipkonijn. Helaas zul je het nooit echt worden, het zit niet in je.”</p>
-            <div class="quoteMeta">Lees het stuk <span aria-hidden="true">↗</span></div>
-          </a>
-        </div>
-      </section>
-
       <section id="distels" class="card sectionGap" aria-label="De geur van distels">
         <h2 class="storyTitle">De geur van distels</h2>
         <p class="storyTag">Een kortverhaal</p>
