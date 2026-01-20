@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" aria-hidden="true">
+  <rect width="128" height="128" rx="28" fill="#F5E9D3"/>
+  <circle cx="64" cy="64" r="44" fill="#D13A32"/>
+  <text x="64" y="72" text-anchor="middle" font-size="44" font-family="'Source Serif Pro', 'Times New Roman', serif" fill="#FFF7EF" letter-spacing="2">TC</text>
+</svg>
