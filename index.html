@@ -482,18 +482,51 @@
       .links{grid-template-columns: 1fr 1fr}
     }
     .linkCard{
-      background: #1F1A16;
-      color: var(--paper);
+      background:
+        linear-gradient(135deg, rgba(245,233,211,.95), rgba(255,255,255,.65) 45%, rgba(244,162,97,.2)),
+        repeating-linear-gradient(0deg, rgba(47,43,39,.05), rgba(47,43,39,.05) 1px, transparent 1px, transparent 14px);
+      color: var(--ink);
       border-radius: var(--radius);
-      padding: 16px;
-      border: 2px solid rgba(245,233,211,.3);
+      padding: 16px 16px 18px;
+      border: 2px solid rgba(47,43,39,.2);
       text-decoration:none;
-      box-shadow: 0 12px 24px rgba(31,26,22,.18);
+      box-shadow: 0 12px 24px rgba(47,43,39,.14);
+      position: relative;
+      overflow: hidden;
     }
-    .linkCard:hover{border-color: rgba(245,233,211,.5)}
+    .linkCard::after{
+      content:"";
+      position:absolute;
+      inset: 6px;
+      border: 1px dashed rgba(47,43,39,.16);
+      border-radius: calc(var(--radius) - 6px);
+      pointer-events:none;
+    }
+    .linkCard:hover{border-color: rgba(47,43,39,.4)}
     .linkCard:focus{box-shadow: 0 0 0 4px var(--ring);}
     .linkCard small{opacity:.85}
-    .linkCard .go{margin-top: 10px; color: var(--highlight); font-weight: 700;}
+    .linkCard .go{margin-top: 10px; color: var(--accent); font-weight: 700;}
+    .linkCardHeader{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin: 0 0 6px;
+      font-size: 16px;
+      letter-spacing: .02em;
+    }
+    .linkIcon{
+      width: 20px;
+      height: 20px;
+      stroke: rgba(47,43,39,.9);
+      fill: rgba(47,43,39,.05);
+      stroke-width: 1.8;
+      flex: 0 0 auto;
+    }
+    .linkDesc{
+      margin: 0;
+      color: rgba(47,43,39,.82);
+      font-size: 14px;
+    }
 
     footer{
       margin-top: 18px;
@@ -594,6 +627,61 @@
         <a class="storyLink" href="assets/De-geur-van-distels_Thomas-Cremers.pdf" download>
           Download de gratis pdf <span aria-hidden="true">↗</span>
         </a>
+      </section>
+
+      <section class="card sectionGap" aria-label="Links">
+        <h2 class="kicker">Links &amp; profielen</h2>
+        <p class="muted">Alle plekken waar mijn werk en beelden te vinden zijn.</p>
+        <div class="links" role="list">
+          <a class="linkCard" href="https://zone.photos/" target="_blank" rel="noopener" role="listitem">
+            <div class="linkCardHeader">
+              <svg class="linkIcon" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="4" y="3" width="16" height="18" rx="2"></rect>
+                <line x1="8" y1="8" x2="16" y2="8"></line>
+                <line x1="8" y1="12" x2="16" y2="12"></line>
+                <line x1="8" y1="16" x2="13" y2="16"></line>
+              </svg>
+              <span>Zone Photos</span>
+            </div>
+            <p class="linkDesc">Fotografie en beeldend werk.</p>
+          </a>
+          <a class="linkCard" href="https://zemelaar.blog/" target="_blank" rel="noopener" role="listitem">
+            <div class="linkCardHeader">
+              <svg class="linkIcon" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="4" y="3" width="16" height="18" rx="2"></rect>
+                <line x1="8" y1="8" x2="16" y2="8"></line>
+                <line x1="8" y1="12" x2="16" y2="12"></line>
+                <line x1="8" y1="16" x2="13" y2="16"></line>
+              </svg>
+              <span>Zemelaar</span>
+            </div>
+            <p class="linkDesc">Essays, korte verhalen en observaties.</p>
+          </a>
+          <a class="linkCard" href="https://dezemelaar.substack.com/" target="_blank" rel="noopener" role="listitem">
+            <div class="linkCardHeader">
+              <svg class="linkIcon" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="4" y="3" width="16" height="18" rx="2"></rect>
+                <line x1="8" y1="8" x2="16" y2="8"></line>
+                <line x1="8" y1="12" x2="16" y2="12"></line>
+                <line x1="8" y1="16" x2="13" y2="16"></line>
+              </svg>
+              <span>De Zemelaar (Substack)</span>
+            </div>
+            <p class="linkDesc">Nieuwsbrief en langere stukken.</p>
+          </a>
+          <a class="linkCard" href="https://www.instagram.com/theodoorthomas_photo_art" target="_blank" rel="noopener" role="listitem">
+            <div class="linkCardHeader">
+              <svg class="linkIcon" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="4" y="3" width="16" height="18" rx="2"></rect>
+                <line x1="8" y1="8" x2="16" y2="8"></line>
+                <line x1="8" y1="12" x2="16" y2="12"></line>
+                <line x1="8" y1="16" x2="13" y2="16"></line>
+              </svg>
+              <span>Instagram</span>
+            </div>
+            <p class="linkDesc">Snelle updates en fotofragmenten.</p>
+          </a>
+        </div>
       </section>
 
     </main>
